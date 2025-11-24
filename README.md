@@ -736,16 +736,6 @@ tts = oracle.TTS(voice_id="...", ...)  # JÁ EXISTE NO PROJETO!
 - ❌ Oportunidade de mercado perdida
 - ❌ Receita não realizada durante o período
 
-**Cálculo de Impacto:**
-```
-Se o sistema processa 1000 ligações/dia com taxa de sucesso de 10%:
-- 100 negociações/dia
-- Assumindo R$ 500 de valor médio recuperado
-- R$ 50.000/dia de receita
-- 5 meses = ~150 dias
-- PERDA DE OPORTUNIDADE: R$ 7.500.000
-```
-
 ### 2. **COMPLEXIDADE TÉCNICA**
 - ❌ Reimplementar funcionalidades complexas
   - Orquestração de sessão
@@ -853,14 +843,6 @@ async def on_metrics(metrics):
   - Documentação interna do zero
   - Processos de desenvolvimento novos
 
-### 8. **OPORTUNIDADE DE CUSTO**
-
-- ❌ **4-5 meses de salários do time**
-  - 2-3 desenvolvedores sêniores
-  - 1 arquiteto
-  - 1-2 QAs
-  - **CUSTO: R$ 200k - R$ 400k**
-
 - ❌ **Atraso no ROI**
   - Sistema não gera receita enquanto em desenvolvimento
   - Cliente pode desistir do projeto
@@ -906,144 +888,22 @@ async def on_metrics(metrics):
    - Propor homologação apenas do LiveKit
    - STT e TTS podem ser substituídos facilmente (já tem OCI TTS no código!)
 
-#### Plano de Ação
-```
-Semana 1-2:
-  → Reunião com cliente
-  → Apresentar documentação técnica de LiveKit
-  → Demonstrar conformidade e segurança
-
-Semana 3-4:
-  → Substituir ElevenLabs por OCI TTS
-  → Substituir FasterWhisper por OCI STT
-  → Manter LiveKit
-
-Semana 5:
-  → Teste end-to-end com stack "homologado"
-  → Validação de qualidade
-  → Ajustes finais
-
-TEMPO TOTAL: 5 semanas (vs 4-5 meses)
-RISCO: BAIXO
-CUSTO: BAIXO
-```
-
 ### Opção 2: **SUBSTITUIÇÃO PARCIAL (PLANO B)**
 
 Se cliente exige mudar LiveKit mas aceita outras tecnologias:
 
-#### Fase 1: Trocar STT e TTS (5 semanas)
+#### Fase 1: Trocar STT e TTS (4 semanas)
 - ✅ Substituir ElevenLabs → OCI TTS (já existe!)
 - ✅ Substituir FasterWhisper → OCI STT
 - ✅ Manter LiveKit
 
-**Ganho:** 67% de "homologação" com 8% do esforço
-
-#### Fase 2: Avaliar alternativas ao LiveKit (4-6 semanas)
-- Pesquisar Twilio, Vonage, etc
-- Verificar homologação
-- POC com alternativa viável
-
-#### Fase 3: Migração (se necessário) (3-4 meses)
-- Implementação gradual
-- Feature flags
-- Rollout controlado
-
 ### Opção 3: **RECONSTRUÇÃO COMPLETA (ÚLTIMO RECURSO)**
-
-Apenas se cliente é irredutível:
-
-#### Arquitetura Proposta
-
-```
-┌────────────────────────────────────────────────────────┐
-│           ASTERISK / FreeSWITCH (SIP Server)           │
-└────────────────────────────────────────────────────────┘
-                        ↓
-┌────────────────────────────────────────────────────────┐
-│        Python AGI Server (Custom Session Manager)      │
-│  • Audio pipeline                                       │
-│  • Turn detection                                       │
-│  • Interruption handling                                │
-└────────────────────────────────────────────────────────┘
-           ↓              ↓              ↓
-    ┌──────────┐   ┌──────────┐   ┌──────────┐
-    │ OCI STT  │   │ OCI Gen  │   │ OCI TTS  │
-    │          │   │   AI     │   │          │
-    └──────────┘   └──────────┘   └──────────┘
-```
-
-#### Cronograma Detalhado (20 semanas)
-
-**Mês 1 (Semanas 1-4): Setup e Arquitetura**
-- Semana 1-2: Setup Asterisk/FreeSWITCH + SIP trunking
-- Semana 3-4: Audio pipeline básico (capture, playback)
-
-**Mês 2 (Semanas 5-8): Core Features**
-- Semana 5-6: Integração OCI STT + TTS
-- Semana 7-8: Session manager básico
-
-**Mês 3 (Semanas 9-12): Features Avançadas**
-- Semana 9-10: Turn detection + VAD
-- Semana 11-12: Interruption handling
-
-**Mês 4 (Semanas 13-16): Integração e Testes**
-- Semana 13-14: Integração com agentes (3 estágios)
-- Semana 15-16: Background audio + música de espera
-
-**Mês 5 (Semanas 17-20): QA e Deploy**
-- Semana 17-18: Testes de carga + debugging
-- Semana 19: Deploy staging
-- Semana 20: Deploy produção
-
-**TOTAL: 5 meses**
 
 #### Riscos
 - 🔴 Estimativa otimista (pode virar 6-8 meses)
 - 🔴 Bugs inesperados em produção
 - 🔴 Performance não atende expectativas
 - 🔴 Time se queima com complexidade
-
----
-
-## 📈 ANÁLISE CUSTO-BENEFÍCIO
-
-### Cenário Atual (Manter LiveKit)
-
-| Item | Valor |
-|------|-------|
-| Tempo de desenvolvimento | 0 meses |
-| Custo de desenvolvimento | R$ 0 |
-| Risco técnico | Baixo (código funciona) |
-| Tempo até go-live | 2-3 semanas (ajustes) |
-| Receita potencial (5 meses) | R$ 7.5M |
-
-**TOTAL POSITIVO: +R$ 7.5M**
-
-### Cenário Negociação (Trocar STT/TTS, Manter LiveKit)
-
-| Item | Valor |
-|------|-------|
-| Tempo de desenvolvimento | 5 semanas |
-| Custo de desenvolvimento | R$ 50k |
-| Risco técnico | Baixo |
-| Tempo até go-live | 6-7 semanas |
-| Receita potencial (4 meses) | R$ 6M |
-
-**TOTAL POSITIVO: +R$ 5.95M**
-
-### Cenário Reconstrução (Trocar Tudo)
-
-| Item | Valor |
-|------|-------|
-| Tempo de desenvolvimento | 5 meses |
-| Custo de desenvolvimento | R$ 300k |
-| Risco técnico | Alto |
-| Tempo até go-live | 5-6 meses |
-| Receita potencial (0 meses) | R$ 0 |
-| Receita perdida | -R$ 7.5M |
-
-**TOTAL NEGATIVO: -R$ 7.8M**
 
 ---
 
@@ -1076,18 +936,6 @@ Apenas se cliente é irredutível:
 - Deploy gradual (canary)
 - Monitoramento intensivo
 - Rollback plan
-
-### Resultado Esperado
-- ✅ **STT homologado** (OCI Speech)
-- ✅ **TTS homologado** (OCI TTS)
-- ✅ **LLM homologado** (OCI Generative AI)
-- ✅ **BD homologado** (Oracle)
-- ⚠️ **LiveKit** (negociação em andamento)
-
-**Tempo:** 10 semanas
-**Custo:** R$ 80k
-**Risco:** BAIXO
-**Receita:** ~R$ 5M (vs R$ 0 com reconstrução)
 
 ---
 
@@ -1168,10 +1016,3 @@ sqlalchemy                   # ORM
 - **LiveKit Documentation:** https://docs.livekit.io/
 - **OCI Speech Documentation:** https://docs.oracle.com/en-us/iaas/Content/speech/
 - **OCI Generative AI:** https://docs.oracle.com/en-us/iaas/Content/generative-ai/
-
----
-
-**Documento preparado por:** Claude (AI Assistant)
-**Data:** 2025-11-24
-**Versão:** 1.0
-**Status:** Para revisão e discussão com cliente
