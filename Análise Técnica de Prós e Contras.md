@@ -205,7 +205,7 @@ max_endpointing_delay=1.2s       # Máximo de espera antes de processar
 STTWhisper(
     model="FasterWhisper",
     api_key="ocigenerativeai",
-    base_url="http://146.235.36.227:8080/v1",
+    base_url="http://146.235.xxxxxx",
     language="pt",
     prompt=f"Confirmando se a pessoa é {customer_name}. Respostas comuns: sim, não..."
 )
