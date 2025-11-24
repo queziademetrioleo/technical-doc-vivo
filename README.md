@@ -1,10 +1,12 @@
-# Vivo Oracle - Agente de Cobrança com IA
+# Vivo Oracle - Documentação Técnica
 
-Sistema inteligente de cobrança automatizada por telefone utilizando IA para negociação de dívidas.
+Documentação técnica sobre a arquitetura do agente de cobrança com IA da Vivo.
 
-## 📋 Sobre o Projeto
+## 📋 Sobre
 
-Agente de voz baseado em IA que realiza ligações SIP para clientes com débitos, valida identidade e negocia acordos de pagamento de forma automatizada.
+Este repositório contém a documentação técnica detalhada do **sistema de cobrança automatizada por telefone** que utiliza IA para negociar dívidas. O agente realiza ligações SIP, valida identidade e negocia acordos de pagamento de forma automatizada.
+
+## 🏗️ Arquitetura
 
 ## 🏗️ Arquitetura
 
@@ -14,26 +16,6 @@ Agente de voz baseado em IA que realiza ligações SIP para clientes com débito
 - **TTS:** ElevenLabs
 - **Banco de Dados:** Oracle Autonomous Database
 - **Cloud:** Oracle Cloud Infrastructure (OCI)
-
-## 📂 Estrutura
-
-```
-livekit-worker-current-prod/
-├── agent.py              # Agente principal
-├── main.py              # Entrypoint
-├── agents/              # Agentes multi-estágio
-│   ├── name_validation/
-│   ├── pid_validation/
-│   └── negotiation/
-├── oracle/              # Integrações OCI
-└── common/              # Banco de dados e utils
-```
-
-## 🔄 Fluxo
-
-1. **Name Validation:** Confirma identidade do titular
-2. **PID Validation:** Valida CPF (3 primeiros dígitos)
-3. **Negotiation:** Apresenta ofertas e negocia pagamento
 
 ## 📚 Documentação
 
