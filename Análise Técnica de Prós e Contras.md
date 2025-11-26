@@ -949,7 +949,7 @@ Se cliente exige mudar LiveKit mas aceita outras tecnologias:
 
 3. **Risco técnico alto** - Código novo sempre tem bugs inesperados
 
-4. **Impacto financeiro severo** - R$ 7.8M de diferença entre cenários
+4. **Impacto financeiro severo**
 
 5. **Alternativa viável existe** - Trocar STT/TTS mantendo LiveKit reduz 90% do esforço
 
@@ -961,7 +961,7 @@ Argumentos:
 - LiveKit não processa dados sensíveis (apenas roteamento)
 - É open source e auditável
 - Alternativas têm os mesmos "riscos" percebidos
-- Mudança completa inviabiliza projeto (5 meses + R$ 300k)
+- Mudança completa inviabiliza projeto (5 meses)
 - **Substituição de STT/TTS já resolve 67% da preocupação**
 
 Se negociação falhar:
