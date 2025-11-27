@@ -169,7 +169,7 @@ O sistema utiliza uma arquitetura multi-agente, onde cada agente é especializad
 
 - ✅ Cliente confirma ser o titular → Avança
 - ❌ Outra pessoa atendeu → Verifica se conhece o titular
-- 💀 Titular faleceu → Encerra com mensagens de condolências
+- ⚰️ Titular faleceu → Encerra com mensagens de condolências
 - 🤚 Cliente pede atendente humano → Transfere imediatamente
 
 **Estado Gerenciado:**
@@ -285,7 +285,6 @@ Além dos 3 agentes especializados, existe um **agente orquestrador** que:
 ### Stack Principal
 
 <img width="1080" height="1176" alt="_- visual selection (2)" src="https://github.com/user-attachments/assets/33472eca-6bd7-41c4-aeea-bf3c81eed558" />
-
 
 
 ```
