@@ -790,5 +790,6 @@ O **Papel Agent VIVO** representa a evolução do atendimento automatizado, comb
 
 
 **Documentação feita por: Quézia Demetrio**
+
 <img width="620" height="220" alt="Quezia-Demétrio (1)" src="https://github.com/user-attachments/assets/90b14a51-5aad-4786-b8ff-6fea33e2fa7a" />
 
