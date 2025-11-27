@@ -93,7 +93,7 @@ O sistema opera através de **três agentes especializados** que trabalham em se
 
 ```
 ┌─────────────────────────────────────────────────────────────────────┐
-│                    ** CAMADA DE COMUNICAÇÃO**                       │
+│                     CAMADA DE COMUNICAÇÃO                           │
 │  ┌──────────────┐         ┌──────────────┐         ┌─────────────┐  │
 │  │   Cliente    │ ←──────→│  LiveKit     │ ←──────→│  Sistema    │  │
 │  │  (Telefone)  │   SIP   │   Session    │  WebRTC │    VIVO     │  │
@@ -101,7 +101,7 @@ O sistema opera através de **três agentes especializados** que trabalham em se
 └─────────────────────────────────────────────────────────────────────┘
                                     ↓
 ┌─────────────────────────────────────────────────────────────────────┐
-│                **CAMADA DE PROCESSAMENTO DE VOZ**                   │
+│              CAMADA DE PROCESSAMENTO DE VOZ                         │
 │  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────┐             │
 │  │   VAD    │→ │   STT    │→ │   LLM    │→ │   TTS    │             │
 │  │ (Silero) │  │(Whisper) │  │ (OCI AI) │  │(ElevenLab│             │
@@ -114,7 +114,7 @@ O sistema opera através de **três agentes especializados** que trabalham em se
 └─────────────────────────────────────────────────────────────────────┘ 
                                     ↓
 ┌─────────────────────────────────────────────────────────────────────┐
-│                   **CAMADA DE INTELIGÊNCIA**                        │
+│                  CAMADA DE INTELIGÊNCIA                             │
 │  ┌───────────────┐  ┌───────────────┐  ┌──────────────┐             │
 │  │  Agente 1     │→ │  Agente 2     │→ │  Agente 3    │             │
 │  │  Validação    │  │  Validação    │  │  Negociação  │             │
@@ -125,7 +125,7 @@ O sistema opera através de **três agentes especializados** que trabalham em se
 └─────────────────────────────────────────────────────────────────────┘
                                     ↓
 ┌─────────────────────────────────────────────────────────────────────┐
-│                      **CAMADA DE DADOS**                            │
+│                  CAMADA DE DADOS                                    │
 │  ┌─────────────────┐         ┌─────────────────┐                    │
 │  │  Oracle DB      │         │  OCI Functions  │                    │
 │  │  (Autônomo)     │         │  (Nectar CRM)   │                    │
@@ -142,16 +142,16 @@ O sistema opera através de **três agentes especializados** que trabalham em se
 
 ### Componentes Principais
 
-| Componente | Função | Tecnologia |
-|------------|--------|------------|
-| **LiveKit Session** | Gerencia a conexão de voz em tempo real | LiveKit Agents Framework |
-| **Orquestrador** | Coordena os 3 agentes e o fluxo geral | VivoCollectionsAgent |
-| **VAD** | Detecta quando há voz ativa | Silero VAD (ONNX) |
-| **STT** | Transcreve voz para texto | FasterWhisper |
-| **LLM** | Processa linguagem e decide respostas | OCI Generative AI (Cohere) |
-| **TTS** | Converte texto em voz natural | ElevenLabs |
-| **Database** | Armazena estados e logs | Oracle Autonomous Database |
-| **CRM Integration** | Integra com sistema de cobrança | OCI Functions (Nectar) |
+| Componente          | Função                                    | Tecnologia                  |
+|---------------------|-------------------------------------------|-----------------------------|
+| **LiveKit Session** | Gerencia a conexão de voz em tempo real   | LiveKit Agents Framework    |
+| **Orquestrador**    | Coordena os 3 agentes e o fluxo geral     | VivoCollectionsAgent        |
+| **VAD**             | Detecta quando há voz ativa               | Silero VAD (ONNX)           |
+| **STT**             | Transcreve voz para texto                 | FasterWhisper               |
+| **LLM**             | Processa linguagem e decide respostas     | OCI Generative AI (Cohere)  |
+| **TTS**             | Converte texto em voz natural             | ElevenLabs                  |
+| **Database**        | Armazena estados e logs                   | Oracle Autonomous Database  |
+| **CRM Integration** | Integra com sistema de cobrança           | OCI Functions (Nectar)      |
 
 ---
 
