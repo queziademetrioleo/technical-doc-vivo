@@ -24,21 +24,11 @@ O **Papel Agent VIVO** é um sistema de cobrança automatizada que utiliza intel
 ### O Que o Sistema Faz?
 
 - **Realiza ligações automáticas** para clientes com contas em aberto
-- **Valida a identidade** do cliente de forma segura
-- **Apresenta ofertas personalizadas** de pagamento baseadas no perfil do cliente
-- **Negocia** de forma inteligente, adaptando-se às respostas do cliente
+- **Valida a identidade** do cliente de forma 
+- **Apresenta ofertas personalizadas** para o cliente
+- **Negocia** adaptando-se às respostas do cliente
 - **Registra automaticamente** todas as interações e resultados
 - **Transfere** para atendimento humano quando necessário
-
-### Por Que é Diferente?
-
-Diferente de sistemas tradicionais de URA (Unidade de Resposta Audível), o Papel Agent VIVO:
-
-- ✅ **Entende linguagem natural** - Não usa menus numéricos
-- ✅ **Responde contextualizadamente** - Entende intenções, não apenas palavras-chave
-- ✅ **Adapta a conversa** - Muda de estratégia baseado nas respostas
-- ✅ **Detecta interrupções** - Permite que o cliente fale a qualquer momento
-- ✅ **Soa natural** - Usa vozes sintetizadas de alta qualidade
 
 ---
 
@@ -155,11 +145,11 @@ O sistema opera através de **três agentes especializados** que trabalham em se
 
 ---
 
-## 🤖 Os Agentes Inteligentes
+# 🤖 Os Agentes Inteligentes
 
 O sistema utiliza uma arquitetura multi-agente, onde cada agente é especializado em uma etapa da conversa.
 
-### 🔵 Agente 1: Validação de Nome
+## 🔵 Agente 1: Validação de Nome
 
 **Objetivo:** Confirmar que está falando com o titular da conta
 
@@ -190,7 +180,7 @@ O sistema utiliza uma arquitetura multi-agente, onde cada agente é especializad
 
 ---
 
-### 🟢 Agente 2: Validação de CPF
+## 🟢 Agente 2: Validação de CPF
 
 **Objetivo:** Validar a identidade através dos primeiros 3 dígitos do CPF
 
@@ -220,7 +210,7 @@ O sistema utiliza uma arquitetura multi-agente, onde cada agente é especializad
 
 ---
 
-### 🟡 Agente 3: Negociação
+## 🟡 Agente 3: Negociação
 
 **Objetivo:** Negociar o pagamento da dívida com empatia e eficiência
 
