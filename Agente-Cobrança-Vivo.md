@@ -1,4 +1,3 @@
-[Papel_Agent_VIVO.md](https://github.com/user-attachments/files/23807680/Papel_Agent_VIVO.md)# 🤖 Papel Agent VIVO
 ## Sistema de Cobrança Inteligente com IA Conversacional
 
 ---
